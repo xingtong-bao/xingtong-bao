@@ -1,98 +1,46 @@
-<h1 align="center">Hi, I'm Xingtong (保星彤) 👋</h1>
-
+<h1 align="center">Xingtong Bao (保星彤)</h1>
+<p align="center"><b>Software Engineer · C++ / Python · Simulation × AI</b> · M.S. EE, University of Pittsburgh · Shanghai</p>
 <p align="center">
-  <b>AI Agent Engineer</b> ·  EE Master's @ University of Pittsburgh · Based in Shanghai 🇨🇳
+  <a href="mailto:18314360020@163.com"><img src="https://img.shields.io/badge/Email-18314360020%40163.com-blue?style=flat-square"/></a>
+  <img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/ONNX_Runtime-lightgrey?style=flat-square"/>
+  <img src="https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white"/>
 </p>
 
-<p align="center">
-  <a href="mailto:18314360020@163.com">
-    <img src="https://img.shields.io/badge/Email-18314360020%40163.com-blue?style=flat-square&logo=gmail"/>
-  </a>
-  <img src="https://img.shields.io/badge/Python-Expert-3776AB?style=flat-square&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/C%2B%2B-Expert-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
-</p>
+## About
 
----
+- 4.5 years of C++ desktop-application development on **Autodesk Revit** (site & terrain modeling): triangle-mesh
+  smooth shading, mesh editing, cross-model 3D point snapping, platform integration, telemetry and data validation.
+- Recently built a production-style C++ wrapper for an AI thermal surrogate: interface contract, OOD detection,
+  per-prediction error bounds, solver fallback, release gates, C ABI, Python pipelines.
+- Interested in AI-accelerated engineering simulation: surrogates trained from solver data, embedded in C++ products.
 
-## 🚀 About Me
+## Featured
 
-I'm a software engineer transitioning into **AI Agent development**, combining 5 years of backend engineering experience (C++/Python) with a strong foundation in machine learning and systems design.
+### [thermal-surrogate-cpp](https://github.com/xingtong-bao/thermal-surrogate-cpp) — a neural thermal surrogate, made safe to put inside a chip-design tool
+C++17 · ONNX Runtime · CMake · GoogleTest · ThreadSanitizer · pybind11 · PyTorch · HotSpot · MIT · CI
 
-- 🎓 M.S. Electrical Engineering, University of Pittsburgh (Machine Learning, Computer Vision, Deep Learning)
-- 🏢 Former C++ Engineer @ **Autodesk Inc.** — core algorithm optimization for Revit
-- 🤖 Building AI Agent systems with **LangChain, LangGraph, RAG, and Function Calling**
-- 🌏 Currently in **Shanghai**, open to opportunities across China and the US
+Takes the public IC-ThermBench 2.5D-IC U-Net (7 input maps → 64×64 steady-state temperature field) and builds
+everything a design-exploration product needs around it:
 
----
+| what a product needs | what the repository shows |
+|---|---|
+| accurate where it has seen data | authors' baseline reproduced: MAE 1.829 K vs 1.829; PyTorch ↔ ONNX Runtime 8.2e-4 K; Python ↔ C++ bit-identical |
+| knows what it does not know | configuration-novelty guard rejects 100 % of unseen chips at 1 % false rejects (per-channel range check: 20 %) |
+| says how sure it is | split-conformal 90 % error bound per prediction, 1.6–3.7 K, held-out coverage 1.00 |
+| never returns a confident wrong answer | surrogate → HotSpot → in-process solver fallback; unseen chips 14.8 K → 3.4 K |
+| fast | 30 ms per prediction (4 CPU threads) vs 2–3 s for the solver; dynamic grids to 512² |
+| safe to update | fine-tuning on 50 solver answers 17.1 K → 2.8 K; release gates caught catastrophic forgetting before it shipped |
+| engineering | C ABI, pybind11, 38 GoogleTest tests, 8-thread ThreadSanitizer-clean, CI; every number traceable to a results file |
 
-## 🛠️ Tech Stack
+## Publication
 
-**AI Agent Development**
-
-![LangChain](https://img.shields.io/badge/LangChain-00A67E?style=flat-square&logo=chainlink&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LangGraph-FF6B35?style=flat-square)
-![RAG](https://img.shields.io/badge/RAG-8A2BE2?style=flat-square)
-![Function Calling](https://img.shields.io/badge/Function_Calling-FF4500?style=flat-square)
-![DeepSeek](https://img.shields.io/badge/DeepSeek_API-0066FF?style=flat-square)
-![OpenAI](https://img.shields.io/badge/OpenAI_API-412991?style=flat-square&logo=openai&logoColor=white)
-
-**ML / AI Frameworks**
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-![FAISS](https://img.shields.io/badge/FAISS-0066CC?style=flat-square)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-
-**Engineering**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-
----
-
-## 📦 Featured Projects
-
-### 🤝 [Multi-Agent Task Automation System](https://github.com/xingtong-bao/multi-agent-system)
-> LangGraph · DeepSeek API · Tool Use · FastAPI
-
-A multi-agent collaboration framework with Planner, Executor, and Reviewer agents working together to autonomously complete complex tasks. Features cross-agent memory sharing and multi-tool integration.
-
----
-
-### 🔍 [Multi-Tool Autonomous Research Agent](https://github.com/xingtong-bao/research-agent)
-> LangChain · Function Calling · ReAct · Tavily Search
-
-An autonomous research agent that integrates 6+ tools (web search, code execution, document generation) to complete end-to-end research workflows. Built on ReAct framework with 80%+ task success rate.
-
----
-
-### 📚 [Enterprise RAG Q&A System](https://github.com/xingtong-bao/rag-qa-system)
-> LangChain · FAISS · DeepSeek API · Gradio
-
-An intelligent document Q&A system supporting PDF/Word/Markdown ingestion, semantic vector search, and multi-turn conversation. Achieves 85%+ answer accuracy with sub-2s response time.
-
----
-
-### 🎯 [Multimodal Recommendation System](https://github.com/xingtong-bao/multimodal-rec)
-> PyTorch · BERT · CNN · NumPy
-
-Two-stage recommendation system (recall + ranking) fusing BERT text features with CNN image features. Achieved Recall@50 +11%, CTR +9% on simulated short-video dataset.
-
----
-
-## 📊 GitHub Stats
+Nonlinear manifold-learning dimensionality reduction based on adaptive density clustering —
+*Journal of Chinese Computer Systems*, 2018(8). Two related invention patents.
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=xingtong-bao&show_icons=true&theme=tokyonight&hide_border=true" height="160"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=xingtong-bao&layout=compact&theme=tokyonight&hide_border=true" height="160"/>
-</p>
-
----
-
-<p align="center">
-  <i>Open to AI Agent Engineer roles in China 🇨🇳 and the US 🇺🇸</i>
+  <img src="https://github-readme-stats.vercel.app/api?username=xingtong-bao&show_icons=true&theme=default&hide_border=true" height="150"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=xingtong-bao&layout=compact&theme=default&hide_border=true" height="150"/>
 </p>
